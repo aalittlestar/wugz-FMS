@@ -235,6 +235,7 @@ $(document).ready(function () {
                 document.form1.validCode.focus();
                 createValid();
             } 
+            //((?=.*\d)(?=.*\D)|(?=.*[a-zA-Z])(?=.*[^a-zA-Z]))^.{8,16}$
             else {
                 var num= "";
                 var loginData = "";
@@ -256,7 +257,8 @@ $(document).ready(function () {
                             openNewWin();
                         }
                         else {
-                        	if(loginUser.message=="验证码错误"||loginUser.message=="用户名称或者密码错误，如果连续输入密码错误5次，IP将被锁定!"z){
+                        	if(loginUser.message=="验证码错误"||loginUser.message=="用户名称或者密码错误，如果连续输入密码错误5次，IP将被锁定!"
+                        		||loginUser.message=="用户名或密码错误，请输入验证码!"){
            
                         		 window.location.href = 'indexVal.jsp'; 
                         	}else{
